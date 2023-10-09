@@ -158,7 +158,7 @@ class NeumorphismSwitch extends StatelessWidget {
           child: Neumorphism(
             drawSurfaceAboveChild: false,
             style: NeumorphismStyle(
-              boxShape: NeumorphicBoxShape.stadium(),
+              boxShape: NeumorphismBoxShape.stadium(),
               lightSource: style.lightSource ?? theme.lightSource,
               border: style.trackBorder,
               disableDepth: style.disableDepth,
@@ -199,7 +199,7 @@ class NeumorphismSwitch extends StatelessWidget {
     if (!isEnabled) {
       return 0;
     } else
-      return style.thumbDepth ?? neumorphicDefaultTheme.depth;
+      return style.thumbDepth ?? neumorphismDefaultTheme.depth;
   }
 
   NeumorphismShape get _getThumbShape {
@@ -210,7 +210,8 @@ class NeumorphismSwitch extends StatelessWidget {
     if (themeDepth == null) return themeDepth;
     //force negative to have emboss
     final double depth = -1 * (style.trackDepth ?? themeDepth).abs();
-    return depth.clamp(Neumorphism.MIN_DEPTH, NeumorphismSwitch.MIN_EMBOSS_DEPTH);
+    return depth.clamp(
+        Neumorphism.MIN_DEPTH, NeumorphismSwitch.MIN_EMBOSS_DEPTH);
   }
 
   Color _getTrackColor(NeumorphismThemeData theme, bool enabled) {
@@ -224,9 +225,8 @@ class NeumorphismSwitch extends StatelessWidget {
   }
 
   Color _getThumbColor(NeumorphismThemeData theme) {
-    Color? color = value == true
-        ? style.activeThumbColor
-        : style.inactiveThumbColor;
+    Color? color =
+        value == true ? style.activeThumbColor : style.inactiveThumbColor;
     return color ?? theme.baseColor;
   }
 }
@@ -266,7 +266,7 @@ class AnimatedThumb extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         child: Neumorphism(
           style: NeumorphismStyle(
-            boxShape: NeumorphicBoxShape.circle(),
+            boxShape: NeumorphismBoxShape.circle(),
             disableDepth: disableDepth,
             shape: shape,
             depth: depth,

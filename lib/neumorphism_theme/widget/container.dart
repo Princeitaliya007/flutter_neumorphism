@@ -8,10 +8,11 @@ import 'clipper/neumorphism_box_shape_clipper.dart';
 
 export '../neumorphism_box_shape.dart';
 export '../decoration/neumorphism_decorations.dart';
+
 /// The main container of the Neumorphic UI KIT
 /// it takes a Neumorphic style @see [NeumorphicStyle]
 ///
-/// it's clipped using a [NeumorphicBoxShape] (circle, roundrect, stadium)
+/// it's clipped using a [NeumorphismBoxShape] (circle, roundrect, stadium)
 ///
 /// It can be, depending on its [NeumorphicStyle.shape] : [NeumorphicShape.concave],  [NeumorphicShape.convex],  [NeumorphicShape.flat]
 ///
@@ -113,7 +114,7 @@ class _NeumorphismContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final shape = style.boxShape ?? NeumorphicBoxShape.rect();
+    final shape = style.boxShape ?? NeumorphismBoxShape.rect();
 
     return DefaultTextStyle(
       style: textStyle ?? material.Theme.of(context).textTheme.bodyText2!,

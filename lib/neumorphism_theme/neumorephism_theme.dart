@@ -50,8 +50,8 @@ class NeumorphismTheme extends StatefulWidget {
   NeumorphismTheme({
     Key? key,
     required this.child,
-    this.theme = neumorphicDefaultTheme,
-    this.darkTheme = neumorphicDefaultDarkTheme,
+    this.theme = neumorphismDefaultTheme,
+    this.darkTheme = neumorphismDefaultDarkTheme,
     this.themeMode = ThemeMode.system,
   });
 
@@ -114,17 +114,17 @@ class NeumorphismTheme extends StatefulWidget {
 
   static NeumorphismThemeData currentTheme(BuildContext context) {
     final provider = NeumorphismTheme.of(context);
-    if (provider == null) return neumorphicDefaultTheme;
+    if (provider == null) return neumorphismDefaultTheme;
     return provider.current == null
-        ? neumorphicDefaultTheme
+        ? neumorphismDefaultTheme
         : provider.current!;
   }
 }
 
 double applyThemeDepthEnable(
     {required BuildContext context,
-      required bool styleEnableDepth,
-      required double depth}) {
+    required bool styleEnableDepth,
+    required double depth}) {
   final NeumorphismThemeData theme = NeumorphismTheme.currentTheme(context);
   return wrapDepthWithThemeData(
       themeData: theme, styleEnableDepth: styleEnableDepth, depth: depth);
@@ -132,8 +132,8 @@ double applyThemeDepthEnable(
 
 double wrapDepthWithThemeData(
     {required NeumorphismThemeData themeData,
-      required bool styleEnableDepth,
-      required double depth}) {
+    required bool styleEnableDepth,
+    required double depth}) {
   if (themeData.disableDepth) {
     return 0;
   } else {

@@ -146,7 +146,7 @@ class _NeumorphismButtonState extends State<NeumorphismButton> {
     if (hasFinishedAnimationDown == true && hasTapUp == true && !hasDisposed) {
       setState(() {
         pressed = false;
-        depth = initialStyle.depth ?? neumorphicDefaultTheme.depth;
+        depth = initialStyle.depth ?? neumorphismDefaultTheme.depth;
 
         hasFinishedAnimationDown = false;
         hasTapUp = false;

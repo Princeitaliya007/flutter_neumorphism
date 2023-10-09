@@ -50,9 +50,9 @@ class NeumorphismThemeData {
   final Color shadowLightColorEmboss;
   final Color shadowDarkColorEmboss;
 
-  final NeumorphicBoxShape? _boxShape;
-  NeumorphicBoxShape get boxShape =>
-      _boxShape ?? NeumorphicBoxShape.roundRect(BorderRadius.circular(8));
+  final NeumorphismBoxShape? _boxShape;
+  NeumorphismBoxShape get boxShape =>
+      _boxShape ?? NeumorphismBoxShape.roundRect(BorderRadius.circular(8));
   final Color borderColor;
   final double borderWidth;
 
@@ -70,10 +70,11 @@ class NeumorphismThemeData {
 
   /// Default icon theme to use and apply across the app
   final IconThemeData iconTheme;
-  final NeumorphicAppBarThemeData appBarTheme;
+  final NeumorphismAppBarThemeData appBarTheme;
 
   /// Get this theme's depth, clamp to min/max neumorphic constants
-  double get depth => _depth.clamp(Neumorphism.MIN_DEPTH, Neumorphism.MAX_DEPTH);
+  double get depth =>
+      _depth.clamp(Neumorphism.MIN_DEPTH, Neumorphism.MAX_DEPTH);
 
   /// Get this theme's intensity, clamp to min/max neumorphic constants
   double get intensity =>
@@ -82,7 +83,7 @@ class NeumorphismThemeData {
   const NeumorphismThemeData({
     this.baseColor = _defaultBaseColor,
     double depth = _defaultDepth,
-    NeumorphicBoxShape? boxShape,
+    NeumorphismBoxShape? boxShape,
     double intensity = _defaultIntensity,
     this.accentColor = _defaultAccent,
     this.variantColor = _defaultVariant,
@@ -96,7 +97,7 @@ class NeumorphismThemeData {
     this.textTheme = const TextTheme(),
     this.iconTheme = const IconThemeData(),
     this.buttonStyle,
-    this.appBarTheme = const NeumorphicAppBarThemeData(),
+    this.appBarTheme = const NeumorphismAppBarThemeData(),
     this.borderColor = NeumorphismColors.defaultBorder,
     this.borderWidth = _defaultBorderSize,
     this.disableDepth = false,
@@ -107,13 +108,13 @@ class NeumorphismThemeData {
   const NeumorphismThemeData.dark({
     this.baseColor = NeumorphismColors.darkBackground,
     double depth = _defaultDepth,
-    NeumorphicBoxShape? boxShape,
+    NeumorphismBoxShape? boxShape,
     double intensity = _defaultIntensity,
     this.accentColor = _defaultAccent,
     this.textTheme = const TextTheme(),
     this.buttonStyle,
     this.iconTheme = const IconThemeData(),
-    this.appBarTheme = const NeumorphicAppBarThemeData(),
+    this.appBarTheme = const NeumorphismAppBarThemeData(),
     this.variantColor = NeumorphismColors.darkVariant,
     this.disabledColor = NeumorphismColors.darkDisabled,
     this.shadowLightColor = NeumorphismColors.decorationMaxWhiteColor,
@@ -195,11 +196,11 @@ class NeumorphismThemeData {
     Color? shadowLightColorEmboss,
     Color? shadowDarkColorEmboss,
     Color? defaultTextColor,
-    NeumorphicBoxShape? boxShape,
+    NeumorphismBoxShape? boxShape,
     TextTheme? textTheme,
     NeumorphismStyle? buttonStyle,
     IconThemeData? iconTheme,
-    NeumorphicAppBarThemeData? appBarTheme,
+    NeumorphismAppBarThemeData? appBarTheme,
     NeumorphismStyle? defaultStyle,
     bool? disableDepth,
     double? depth,
@@ -269,8 +270,9 @@ class NeumorphismThemeData {
 const NeumorphismShape _defaultShape = NeumorphismShape.flat;
 //const double _defaultBorderRadius = 5;
 
- const NeumorphismThemeData neumorphicDefaultTheme = NeumorphismThemeData();
- const NeumorphismThemeData neumorphicDefaultDarkTheme = NeumorphismThemeData.dark();
+const NeumorphismThemeData neumorphismDefaultTheme = NeumorphismThemeData();
+const NeumorphismThemeData neumorphismDefaultDarkTheme =
+    NeumorphismThemeData.dark();
 
 class NeumorphismBorder {
   final bool isEnabled;
@@ -341,7 +343,7 @@ class NeumorphismStyle {
   final bool oppositeShadowLightSource;
 
   final NeumorphismShape shape;
-  final NeumorphicBoxShape? boxShape;
+  final NeumorphismBoxShape? boxShape;
   final NeumorphismThemeData? theme;
 
   //override the "white" color
@@ -470,7 +472,7 @@ class NeumorphismStyle {
   NeumorphismStyle copyWith({
     Color? color,
     NeumorphismBorder? border,
-    NeumorphicBoxShape? boxShape,
+    NeumorphismBoxShape? boxShape,
     Color? shadowLightColor,
     Color? shadowDarkColor,
     Color? shadowLightColorEmboss,

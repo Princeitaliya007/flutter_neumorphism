@@ -3,12 +3,12 @@ import 'package:flutter/widgets.dart';
 import '../../neumorphism_box_shape.dart';
 
 class NeumorphismBoxShapeClipper extends StatelessWidget {
-  final NeumorphicBoxShape shape;
+  final NeumorphismBoxShape shape;
   final Widget? child;
 
   NeumorphismBoxShapeClipper({required this.shape, this.child});
 
-  CustomClipper<Path>? _getClipper(NeumorphicBoxShape shape) {
+  CustomClipper<Path>? _getClipper(NeumorphismBoxShape shape) {
     return shape.customShapePathProvider;
   }
 

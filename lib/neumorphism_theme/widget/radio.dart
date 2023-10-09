@@ -8,9 +8,9 @@ import '../theme.dart';
 import 'button.dart';
 import 'container.dart';
 
-typedef void NeumorphicRadioListener<T>(T value);
+typedef void NeumorphismRadioListener<T>(T value);
 
-/// A Style used to customize a [NeumorphicRadio]
+/// A Style used to customize a [NeumorphismRadio]
 ///
 /// [selectedDepth] : the depth when checked
 /// [unselectedDepth] : the depth when unchecked (default : theme.depth)
@@ -18,12 +18,12 @@ typedef void NeumorphicRadioListener<T>(T value);
 /// [intensity] : a customizable neumorphic intensity for this widget
 ///
 /// [boxShape] : a customizable neumorphic boxShape for this widget
-///   @see [NeumorphicBoxShape]
+///   @see [NeumorphismBoxShape]
 ///
 /// [shape] : a customizable neumorphic shape for this widget
 ///   @see [NeumorphicShape] (concave, convex, flat)
 ///
-class NeumorphicRadioStyle {
+class NeumorphismRadioStyle {
   final double? selectedDepth;
   final double? unselectedDepth;
   final bool disableDepth;
@@ -35,11 +35,11 @@ class NeumorphicRadioStyle {
   final NeumorphismShape? shape;
 
   final NeumorphismBorder border;
-  final NeumorphicBoxShape? boxShape;
+  final NeumorphismBoxShape? boxShape;
 
   final LightSource? lightSource;
 
-  const NeumorphicRadioStyle({
+  const NeumorphismRadioStyle({
     this.selectedDepth,
     this.unselectedDepth,
     this.selectedColor,
@@ -55,7 +55,7 @@ class NeumorphicRadioStyle {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is NeumorphicRadioStyle &&
+      other is NeumorphismRadioStyle &&
           runtimeType == other.runtimeType &&
           disableDepth == other.disableDepth &&
           lightSource == other.lightSource &&
@@ -87,7 +87,7 @@ class NeumorphicRadioStyle {
 /// It takes a `value` and a `groupValue`
 /// if (value == groupValue) => checked
 ///
-/// takes a NeumorphicRadioStyle as `style`
+/// takes a NeumorphismRadioStyle as `style`
 ///
 /// notifies the parent when user interact with this widget with `onChanged`
 ///
@@ -98,7 +98,7 @@ class NeumorphicRadioStyle {
 ///    return Row(
 ///      children: <Widget>[
 ///
-///        NeumorphicRadio(
+///        NeumorphismRadio(
 ///          child: SizedBox(
 ///            height: 50,
 ///            width: 50,
@@ -115,7 +115,7 @@ class NeumorphicRadioStyle {
 ///          },
 ///        ),
 ///
-///        NeumorphicRadio(
+///        NeumorphismRadio(
 ///          child: SizedBox(
 ///            height: 50,
 ///            width: 50,
@@ -132,7 +132,7 @@ class NeumorphicRadioStyle {
 ///          },
 ///        ),
 ///
-///        NeumorphicRadio(
+///        NeumorphismRadio(
 ///          child: SizedBox(
 ///            height: 50,
 ///            width: 50,
@@ -155,21 +155,21 @@ class NeumorphicRadioStyle {
 /// ```
 ///
 @immutable
-class NeumorphicRadio<T> extends StatelessWidget {
+class NeumorphismRadio<T> extends StatelessWidget {
   final Widget? child;
   final T? value;
   final T? groupValue;
   final EdgeInsets padding;
-  final NeumorphicRadioStyle style;
-  final NeumorphicRadioListener<T?>? onChanged;
+  final NeumorphismRadioStyle style;
+  final NeumorphismRadioListener<T?>? onChanged;
   final bool isEnabled;
 
   final Duration duration;
   final Curve curve;
 
-  NeumorphicRadio({
+  NeumorphismRadio({
     this.child,
-    this.style = const NeumorphicRadioStyle(),
+    this.style = const NeumorphismRadioStyle(),
     this.value,
     this.curve = Neumorphism.DEFAULT_CURVE,
     this.duration = Neumorphism.DEFAULT_DURATION,

@@ -175,7 +175,7 @@ class _NeumorphismProgressState extends State<NeumorphismProgress>
         child: Neumorphism(
           padding: EdgeInsets.zero,
           style: NeumorphismStyle(
-            boxShape: NeumorphicBoxShape.roundRect(widget.style.borderRadius),
+            boxShape: NeumorphismBoxShape.roundRect(widget.style.borderRadius),
             disableDepth: widget.style.disableDepth,
             border: widget.style.border,
             depth: widget.style.depth,
@@ -304,7 +304,7 @@ class _NeumorphismProgressIndeterminateState
         child: Neumorphism(
           padding: EdgeInsets.zero,
           style: NeumorphismStyle(
-            boxShape: NeumorphicBoxShape.roundRect(widget.style.borderRadius),
+            boxShape: NeumorphismBoxShape.roundRect(widget.style.borderRadius),
             lightSource: widget.style.lightSource ?? theme.lightSource,
             border: widget.style.border,
             disableDepth: widget.style.disableDepth,

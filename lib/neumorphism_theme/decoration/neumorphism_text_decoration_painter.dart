@@ -116,7 +116,7 @@ class NeumorphismDecorationTextPainter extends BoxPainter {
       invalidateShadowColors = this._cache.updateShadowColor(
             newShadowLightColorEmboss: style.shadowLightColor!,
             newShadowDarkColorEmboss: style.shadowDarkColor!,
-            newIntensity: style.intensity ?? neumorphicDefaultTheme.intensity,
+            newIntensity: style.intensity ?? neumorphismDefaultTheme.intensity,
           );
       if (invalidateShadowColors) {
         if (_cache.shadowLightColor != null) {

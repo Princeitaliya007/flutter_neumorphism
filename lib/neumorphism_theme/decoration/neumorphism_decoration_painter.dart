@@ -11,7 +11,7 @@ import 'neumorphism_emboss_decoration_painter.dart';
 
 class NeumorphismDecorationPainter extends BoxPainter {
   final NeumorphismStyle style;
-  final NeumorphicBoxShape shape;
+  final NeumorphismBoxShape shape;
 
   NeumorphismPainterCache _cache = NeumorphismPainterCache();
 
@@ -57,8 +57,8 @@ class NeumorphismDecorationPainter extends BoxPainter {
   void _updateCache(Offset offset, ImageConfiguration configuration) {
     bool invalidateSize = false;
     if (configuration.size != null) {
-      invalidateSize = _cache
-          .updateSize(newOffset: offset, newSize: configuration.size!);
+      invalidateSize =
+          _cache.updateSize(newOffset: offset, newSize: configuration.size!);
       if (invalidateSize) {
         _cache.updatePath(
             newPath:
@@ -94,10 +94,10 @@ class NeumorphismDecorationPainter extends BoxPainter {
         style.shadowDarkColor != null &&
         style.intensity != null) {
       invalidateShadowColors = _cache.updateShadowColor(
-            newShadowLightColorEmboss: style.shadowLightColor!,
-            newShadowDarkColorEmboss: style.shadowDarkColor!,
-            newIntensity: style.intensity!,
-          );
+        newShadowLightColorEmboss: style.shadowLightColor!,
+        newShadowDarkColorEmboss: style.shadowDarkColor!,
+        newIntensity: style.intensity!,
+      );
       if (invalidateShadowColors) {
         if (_cache.shadowLightColor != null) {
           _whiteShadowPaint..color = _cache.shadowLightColor!;
@@ -202,14 +202,13 @@ class NeumorphismDecorationPainter extends BoxPainter {
         style.shape == NeumorphismShape.convex) {
       final pathRect = path.getBounds();
 
-      _gradientPaint
-        .shader = getGradientShader(
-          gradientRect: pathRect,
-          intensity: style.surfaceIntensity,
-          source: style.shape == NeumorphismShape.concave
-              ? style.lightSource
-              : style.lightSource.invert(),
-        );
+      _gradientPaint.shader = getGradientShader(
+        gradientRect: pathRect,
+        intensity: style.surfaceIntensity,
+        source: style.shape == NeumorphismShape.concave
+            ? style.lightSource
+            : style.lightSource.invert(),
+      );
 
       canvas
         ..saveLayer(

@@ -24,7 +24,7 @@ class NeumorphismCheckboxStyle {
   final Color? disabledColor;
   final LightSource? lightSource;
   final NeumorphismBorder border;
-  final NeumorphicBoxShape? boxShape;
+  final NeumorphismBoxShape? boxShape;
 
   const NeumorphismCheckboxStyle({
     this.selectedDepth,
@@ -152,14 +152,12 @@ class NeumorphismCheckbox extends StatelessWidget {
 
     final double selectedDepth =
         -1 * (style.selectedDepth ?? theme.depth).abs();
-    final double unselectedDepth =
-        (style.unselectedDepth ?? theme.depth).abs();
+    final double unselectedDepth = (style.unselectedDepth ?? theme.depth).abs();
     final double selectedIntensity =
         (style.selectedIntensity ?? theme.intensity)
             .abs()
             .clamp(Neumorphism.MIN_INTENSITY, Neumorphism.MAX_INTENSITY);
-    final double unselectedIntensity = style
-        .unselectedIntensity
+    final double unselectedIntensity = style.unselectedIntensity
         .clamp(Neumorphism.MIN_INTENSITY, Neumorphism.MAX_INTENSITY);
 
     double depth = isSelected ? selectedDepth : unselectedDepth;

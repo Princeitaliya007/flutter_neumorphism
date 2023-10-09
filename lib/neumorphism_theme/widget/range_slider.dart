@@ -7,8 +7,8 @@ import '../theme.dart';
 import 'container.dart';
 import 'progress.dart';
 
-typedef void NeumorphicRangeSliderLowListener(double percent);
-typedef void NeumorphicRangeSliderHighListener(double percent);
+typedef void NeumorphismRangeSliderLowListener(double percent);
+typedef void NeumorphismRangeSliderHighListener(double percent);
 
 /// A style to customize the [NeumorphicSlider]
 ///
@@ -85,7 +85,7 @@ class RangeSliderStyle {
 ///      children: <Widget>[
 ///
 ///        Flexible(
-///          child: NeumorphicRangeSlider(
+///          child: NeumorphismRangeSlider(
 ///              valueLow: minPrice,
 ///              valueHigh: maxPrice,
 ///              min: 18,
@@ -113,7 +113,7 @@ class RangeSliderStyle {
 ///  ```
 ///
 @immutable
-class NeumorphicRangeSlider extends StatefulWidget {
+class NeumorphismRangeSlider extends StatefulWidget {
   final RangeSliderStyle style;
   final double min;
   final double valueLow;
@@ -121,13 +121,13 @@ class NeumorphicRangeSlider extends StatefulWidget {
   final double max;
   final double height;
   final double? sliderHeight;
-  final NeumorphicRangeSliderLowListener? onChangedLow;
-  final NeumorphicRangeSliderHighListener? onChangeHigh;
+  final NeumorphismRangeSliderLowListener? onChangedLow;
+  final NeumorphismRangeSliderHighListener? onChangeHigh;
   final Function(ActiveThumb)? onPanStarted;
   final Function(ActiveThumb)? onPanEnded;
   final Widget? thumb;
 
-  NeumorphicRangeSlider({
+  NeumorphismRangeSlider({
     Key? key,
     this.style = const RangeSliderStyle(),
     this.min = 0,
@@ -149,10 +149,10 @@ class NeumorphicRangeSlider extends StatefulWidget {
       (((valueHigh.clamp(min, max)) - min) / ((max - min)));
 
   @override
-  createState() => _NeumorphicRangeSliderState();
+  createState() => _NeumorphismRangeSliderState();
 }
 
-class _NeumorphicRangeSliderState extends State<NeumorphicRangeSlider> {
+class _NeumorphismRangeSliderState extends State<NeumorphismRangeSlider> {
   late ActiveThumb _activeThumb;
   late bool _canChangeActiveThumb;
 
@@ -306,7 +306,7 @@ class _NeumorphicRangeSliderState extends State<NeumorphicRangeSlider> {
         shape: NeumorphismShape.concave,
         color: color ?? theme.accentColor,
         border: widget.style.thumbBorder,
-        boxShape: const NeumorphicBoxShape.circle(),
+        boxShape: const NeumorphismBoxShape.circle(),
         lightSource: widget.style.lightSource ?? theme.lightSource,
       ),
       child: SizedBox(

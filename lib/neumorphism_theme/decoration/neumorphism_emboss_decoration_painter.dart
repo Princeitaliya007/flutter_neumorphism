@@ -12,7 +12,7 @@ class NeumorphismEmbossDecorationPainter extends BoxPainter {
   NeumorphicEmbossPainterCache _cache;
 
   final NeumorphismStyle style;
-  final NeumorphicBoxShape shape;
+  final NeumorphismBoxShape shape;
 
   late Paint _backgroundPaint;
   late Paint _whiteShadowPaint;
@@ -29,8 +29,8 @@ class NeumorphismEmbossDecorationPainter extends BoxPainter {
       required this.drawBackground,
       required this.drawShadow,
       required VoidCallback onChanged,
-      NeumorphicBoxShape? shape})
-      : shape = shape ?? const NeumorphicBoxShape.rect(),
+      NeumorphismBoxShape? shape})
+      : shape = shape ?? const NeumorphismBoxShape.rect(),
         _cache = NeumorphicEmbossPainterCache(),
         super(onChanged) {
     _generatePainters();

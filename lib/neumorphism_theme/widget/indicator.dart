@@ -203,7 +203,7 @@ class _NeumorphismIndicatorState extends State<NeumorphismIndicator>
       child: Neumorphism(
         padding: EdgeInsets.zero,
         style: NeumorphismStyle(
-          boxShape: const NeumorphicBoxShape.stadium(),
+          boxShape: const NeumorphismBoxShape.stadium(),
           lightSource: widget.style.lightSource ?? theme.lightSource,
           disableDepth: widget.style.disableDepth,
           depth: widget.style.depth,
@@ -229,7 +229,7 @@ class _NeumorphismIndicatorState extends State<NeumorphismIndicator>
                   padding: widget.padding,
                   child: Neumorphism(
                     style: NeumorphismStyle(
-                      boxShape: const NeumorphicBoxShape.stadium(),
+                      boxShape: const NeumorphismBoxShape.stadium(),
                       lightSource:
                           widget.style.lightSource ?? theme.lightSource,
                     ),

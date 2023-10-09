@@ -5,33 +5,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 @immutable
-class NeumorphicAppBarThemeData {
+class NeumorphismAppBarThemeData {
   final Color color;
   final IconThemeData? iconTheme;
   final NeumorphismStyle buttonStyle;
   final EdgeInsets buttonPadding;
   final bool? centerTitle;
   final TextStyle? textStyle;
-  final NeumorphicAppBarIcons icons;
+  final NeumorphismAppBarIcons icons;
 
-  const NeumorphicAppBarThemeData({
+  const NeumorphismAppBarThemeData({
     this.color = Colors.transparent,
     this.iconTheme,
     this.textStyle,
     this.buttonStyle = const NeumorphismStyle(),
     this.centerTitle,
     this.buttonPadding = const EdgeInsets.all(0),
-    this.icons = const NeumorphicAppBarIcons(),
+    this.icons = const NeumorphismAppBarIcons(),
   });
 }
 
-class NeumorphicAppBarIcons {
+class NeumorphismAppBarIcons {
   final Icon closeIcon;
   final Icon menuIcon;
   final Icon? _backIcon;
   final Icon? _forwardIcon;
 
-  const NeumorphicAppBarIcons({
+  const NeumorphismAppBarIcons({
     this.menuIcon = const Icon(Icons.menu),
     this.closeIcon = const Icon(Icons.close),
     Icon? backIcon,
@@ -50,13 +50,13 @@ class NeumorphicAppBarIcons {
       ? const Icon(Icons.arrow_forward_ios)
       : const Icon(Icons.arrow_forward);
 
-  NeumorphicAppBarIcons copyWith({
+  NeumorphismAppBarIcons copyWith({
     Icon? backIcon,
     Icon? closeIcon,
     Icon? menuIcon,
     Icon? forwardIcon,
   }) {
-    return NeumorphicAppBarIcons(
+    return NeumorphismAppBarIcons(
       backIcon: backIcon ?? this.backIcon,
       closeIcon: closeIcon ?? this.closeIcon,
       menuIcon: menuIcon ?? this.menuIcon,
@@ -68,7 +68,7 @@ class NeumorphicAppBarIcons {
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is NeumorphicAppBarIcons &&
+    return o is NeumorphismAppBarIcons &&
         o.backIcon == backIcon &&
         o.closeIcon == closeIcon &&
         o.menuIcon == menuIcon &&
@@ -84,5 +84,5 @@ class NeumorphicAppBarIcons {
 
   @override
   String toString() =>
-      'NeumorphicAppBarIcons(backIcon: $backIcon, closeIcon: $closeIcon, menuIcon: $menuIcon, forwardIcon: $forwardIcon)';
+      'NeumorphismAppBarIcons(backIcon: $backIcon, closeIcon: $closeIcon, menuIcon: $menuIcon, forwardIcon: $forwardIcon)';
 }

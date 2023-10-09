@@ -11,7 +11,7 @@ import 'neumorphism_emboss_decoration_painter.dart';
 @immutable
 class NeumorphismDecoration extends Decoration {
   final NeumorphismStyle style;
-  final NeumorphicBoxShape shape;
+  final NeumorphismBoxShape shape;
   final bool splitBackgroundForeground;
   final bool renderingByPath;
   final bool isForeground;
@@ -74,7 +74,7 @@ class NeumorphismDecoration extends Decoration {
         isForeground: this.isForeground,
         renderingByPath: this.renderingByPath,
         splitBackgroundForeground: this.splitBackgroundForeground,
-        shape: NeumorphicBoxShape.lerp(null, shape, factor)!,
+        shape: NeumorphismBoxShape.lerp(null, shape, factor)!,
         style: style.copyWith());
   }
 
@@ -99,7 +99,7 @@ class NeumorphismDecoration extends Decoration {
 
     return NeumorphismDecoration(
         isForeground: a.isForeground,
-        shape: NeumorphicBoxShape.lerp(a.shape, b.shape, t)!,
+        shape: NeumorphismBoxShape.lerp(a.shape, b.shape, t)!,
         splitBackgroundForeground: a.splitBackgroundForeground,
         renderingByPath: a.renderingByPath,
         style: a.style.copyWith(

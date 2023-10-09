@@ -75,7 +75,7 @@ class NeumorphismToggleStyle {
 ///      )
 ///    ],
 ///    thumb: Neumorphic(
-///      boxShape: NeumorphicBoxShape.roundRect(borderRadius: BorderRadius.all(Radius.circular(12))),
+///      boxShape: NeumorphismBoxShape.roundRect(borderRadius: BorderRadius.all(Radius.circular(12))),
 ///    ),
 ///    onChanged: (value) {
 ///      setState(() {
@@ -122,7 +122,7 @@ class ToggleElement {
 ///      )
 ///    ],
 ///    thumb: Neumorphic(
-///      boxShape: NeumorphicBoxShape.roundRect(borderRadius: BorderRadius.all(Radius.circular(12))),
+///      boxShape: NeumorphismBoxShape.roundRect(borderRadius: BorderRadius.all(Radius.circular(12))),
 ///    ),
 ///    onChanged: (value) {
 ///      setState(() {
@@ -196,9 +196,8 @@ class NeumorphismToggle extends StatelessWidget {
             heightFactor: 1,
             child: Neumorphism(
               style: NeumorphismStyle(
-                boxShape: NeumorphicBoxShape.roundRect(
-                    style?.borderRadius ??
-                        BorderRadius.all(Radius.circular(12))),
+                boxShape: NeumorphismBoxShape.roundRect(style?.borderRadius ??
+                    BorderRadius.all(Radius.circular(12))),
               ),
               margin: padding,
               child: thumb,
@@ -242,8 +241,7 @@ class NeumorphismToggle extends StatelessWidget {
 
   Widget _foregroundAtIndex(int index) {
     Widget? child = (!displayForegroundOnlyIfSelected) ||
-            (displayForegroundOnlyIfSelected &&
-                selectedIndex == index)
+            (displayForegroundOnlyIfSelected && selectedIndex == index)
         ? children[index].foreground
         : SizedBox.expand();
     //wrap with opacity animation
@@ -269,8 +267,8 @@ class NeumorphismToggle extends StatelessWidget {
   Widget _background(BuildContext context) {
     return Neumorphism(
       style: NeumorphismStyle(
-          boxShape: NeumorphicBoxShape.roundRect(style?.borderRadius ??
-              BorderRadius.all(Radius.circular(12))),
+          boxShape: NeumorphismBoxShape.roundRect(
+              style?.borderRadius ?? BorderRadius.all(Radius.circular(12))),
           color: style?.backgroundColor,
           disableDepth: style?.disableDepth,
           depth: _getTrackDepth(context),
@@ -306,7 +304,8 @@ class NeumorphismToggle extends StatelessWidget {
 
     //force negative to have emboss
     final double depth = -1 * (style?.depth ?? theme.depth).abs();
-    return depth.clamp(Neumorphism.MIN_DEPTH, NeumorphismToggle.MIN_EMBOSS_DEPTH);
+    return depth.clamp(
+        Neumorphism.MIN_DEPTH, NeumorphismToggle.MIN_EMBOSS_DEPTH);
   }
 
   void _notifyOnChange(int newValue) {
